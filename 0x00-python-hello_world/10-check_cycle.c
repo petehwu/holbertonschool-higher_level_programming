@@ -14,8 +14,8 @@ int check_cycle(listint_t *list)
 	normal = list;
 	skipper = list;
 	do {
-		if ((skipper->next)->next)
-			skipper = (skipper->next)->next;
+		if (skipper->next && skipper->next->next)
+			skipper = skipper->next->next;
 		else
 			break;
 		if (normal == skipper)
