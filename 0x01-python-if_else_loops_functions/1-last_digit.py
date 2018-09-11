@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-lastdig = number % 10
+lastdig = int(str(number)[-1])
 if number < 0:
-    lastdig -= 10
+    lastdig *= -1
 if lastdig > 5:
     print("Last digit of {} is {} and is greater than 5"
           .format(number, lastdig))
