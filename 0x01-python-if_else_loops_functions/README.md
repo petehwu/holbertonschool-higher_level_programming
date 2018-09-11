@@ -11,7 +11,7 @@ File | Description
 2-print\_alphabet.py | prints the alphabet without newline 
 3-print\_alphabt.py | prints the alphabet except q and e and no newline
 4-print\_hexa.py | prints all numbers from 0 to 98 in decimal and hex
-5-print\_comb2.py prints from 0 to 99
+5-print\_comb2.py | prints from 0 to 99
 6-print\_comb3.py | prints all possible combination of 2 digits
 7-islower.py | checks for lower case letters
 8-uppercase.py | prints a string in upper case
