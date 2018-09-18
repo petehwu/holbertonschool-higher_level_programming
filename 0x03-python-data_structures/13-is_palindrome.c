@@ -7,34 +7,24 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *rev = NULL, *temp2, *temp = *head;
-	size_t numnodes = 0, i = 0;
+	listint_t *temp = *head;
+	size_t numnodes = 0, i = 0, j = 0;
+	int vals[1024];
 
 	if (!temp || !temp->next)
 		return (1);
 	while (temp)
 	{
-		add_nodeint(&rev, temp->n);
-		temp = temp->next;
+		vals[numnodes] = temp->n;
 		numnodes++;
-	}
-	if (numnodes % 2)
-		numnodes /= 2;
-	else
-		numnodes = (numnodes / 2) + 1;
-	temp = *head;
-	temp2 = rev;
-	for (i = 0; i < numnodes; i++)
-	{
-		if (temp->n != temp2->n)
-		{
-			free_listint(rev);
-			return (0);
-		}
 		temp = temp->next;
-		temp2 = temp2->next;
 	}
-	free_listint(rev);
+	numnodes--;
+	for (i = 0, j = numnodes; i < j; i++, j--)
+	{
+		if (vals[i] != vals[j])
+			return (0);
+	}
 	return (1);
 }
 /**
