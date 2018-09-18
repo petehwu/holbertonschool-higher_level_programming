@@ -12,26 +12,25 @@ int is_palindrome(listint_t **head)
 
 	if (!temp || !temp->next)
 		return (1);
-	for (numnodes = 0; temp; temp = temp->next, numnodes++)
-		;
-	if (numnodes % 2)
-		numnodes = (numnodes / 2) + 1;
-	else
-		numnodes /= 2;
-	temp = *head;
-	for (i = 0; i < numnodes; i++)
-		temp = temp->next;
 	while (temp)
 	{
 		add_nodeint(&rev, temp->n);
 		temp = temp->next;
+		numnodes++;
 	}
-	temp2 = rev;
+	if (numnodes % 2)
+		numnodes /= 2;
+	else
+		numnodes = (numnodes / 2) + 1;
 	temp = *head;
-	while (temp2)
+	temp2 = rev;
+	for (i = 0; i < numnodes; i++)
 	{
-		if (temp2->n != temp->n)
+		if (temp->n != temp2->n)
+		{
+			free_listint(rev);
 			return (0);
+		}
 		temp = temp->next;
 		temp2 = temp2->next;
 	}
