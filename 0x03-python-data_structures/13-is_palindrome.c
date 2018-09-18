@@ -8,21 +8,15 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
-	size_t numnodes = 0, i = 0, j = 0, mul = 1;
-	int *vals;
+	size_t numnodes = 0, i = 0, j = 0;
+	int vals[3000];
 
 	if (!temp || !temp->next)
 		return (1);
-	vals = malloc(sizeof(int) * (10 * mul));
 	while (temp)
 	{
 		vals[numnodes] = temp->n;
 		numnodes++;
-		if (numnodes == (9 * mul))
-		{
-			mul++;
-			vals = realloc(vals, (sizeof(int) * (10 * mul)));
-		}
 		temp = temp->next;
 	}
 	numnodes--;
@@ -30,11 +24,9 @@ int is_palindrome(listint_t **head)
 	{
 		if (vals[i] != vals[j])
 		{
-			free(vals);
 			return (0);
 		}
 	}
-	free(vals);
 	return (1);
 }
 /**
