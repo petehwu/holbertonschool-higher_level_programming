@@ -10,12 +10,10 @@ int is_palindrome(listint_t **head)
 	listint_t *rev = NULL, *temp2, *temp = *head;
 	size_t numnodes = 0, i = 0;
 
-	if (!temp)
+	if (!temp || !temp->next)
 		return (1);
 	for (numnodes = 0; temp; temp = temp->next, numnodes++)
 		;
-	if (numnodes == 1)
-		return (1);
 	if (numnodes % 2)
 		numnodes = (numnodes / 2) + 1;
 	else
