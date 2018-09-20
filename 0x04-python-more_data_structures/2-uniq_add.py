@@ -7,6 +7,6 @@ def uniq_add(my_list=[]):
     tot = 0
     for val in my_list:
         if val != prev:
-            tot+= val
+            tot += val
         prev = val
     return tot
