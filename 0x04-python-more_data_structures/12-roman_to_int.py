@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is None:
+    if roman_string is None or not roman_string:
         return int(0)
     try:
         roman = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
