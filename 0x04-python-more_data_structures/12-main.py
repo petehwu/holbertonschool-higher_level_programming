@@ -18,8 +18,25 @@ print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 roman_number = "DCCVII"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
-roman_number = "D53"
+roman_number = "x"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
-roman_number = ""
+roman_number = "MMMCMXCIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "MMMCMXCVIII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "MMMCMXCVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "MMMCMXCIV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "I"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "CMXCIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = 50
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "C50" 
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "D50" 
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
