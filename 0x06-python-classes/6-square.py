@@ -48,9 +48,10 @@ class Square:
 
     def my_print(self):
         """prints out a square with some additional spaces and blank lines"""
-        print("\n" * self.__position[1], end="")
         if self.__size == 0:
             print()
+        else:
+            print("\n" * self.__position[1], end="")
         for i in range(self.__size):
             print("{}{}".format(" " * self.__position[0],
                   "#" * self.__size))
