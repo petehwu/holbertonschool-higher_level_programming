@@ -56,7 +56,7 @@ class Square:
             tempstr = ""
         else:
             for i in range(self.__size):
-                templist.append( "{}{}".format(" " * self.__position[0],
-                                               "#" * self.__size))
+                templist.append("{}{}".format(" " * self.__position[0],
+                                              "#" * self.__size))
             tempstr = "\n" * self.__position[1] + "\n".join(templist)
             return tempstr
