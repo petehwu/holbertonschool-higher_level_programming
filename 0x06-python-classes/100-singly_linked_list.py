@@ -3,8 +3,6 @@ class Node:
     """Node class for singularly linked list"""
     def __init__(self, data, next_node=None):
         """init method to instantiate object"""
-        if not isinstance(data, int):
-            raise TypeError("data must be an integer")
         self.data = data
         self.next_node = next_node
 
@@ -29,7 +27,7 @@ class Node:
     def next_node(self, value):
         """setter for next_node"""
         if value is not None and type(value) is not Node:
-            raise TypeError("next node must be a Node object")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
