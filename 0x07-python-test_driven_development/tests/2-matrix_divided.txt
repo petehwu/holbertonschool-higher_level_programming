@@ -1,0 +1,50 @@
+# 2-matrix_divided.txt
+
+``matrix_divided`` takes a list of list of same size and divide each
+number by a specified number and inserts the result into a new list of
+lists and return it
+
+::
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+>>> matrix = [
+...     [1, 2, 3, 4],
+...     [2, 5, 6, 9]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0, 1.33], [0.67, 1.67, 2.0, 3.0]]
+>>> print(matrix)
+[[1, 2, 3, 4], [2, 5, 6, 9]]
+>>> matrix = [
+...     [1, 2, 6],
+...     [4, 5, 6],
+...     [3, 6, 8]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 2.0], [1.33, 1.67, 2.0], [1.0, 2.0, 2.67]]
+>>> print(matrix)
+[[1, 2, 6], [4, 5, 6], [3, 6, 8]]
+>>> matrix = []
+>>> print(matrix_divided(matrix, 5))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> print(matrix)
+[]
+>>> matrix = [
+...     [2, 2, 2],
+...     [4, 4, 4],
+...     [8, 8, 8]
+... ]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+>>> print(matrix)
+[[2, 2, 2], [4, 4, 4], [8, 8, 8]]

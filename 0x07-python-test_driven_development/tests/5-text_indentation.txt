@@ -1,0 +1,66 @@
+# 5-text_indentation.txt
+
+``text_indentation`` prints out 2 newlines after ?,:,. charcters
+
+::
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation(12)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation([12])
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation("This is a test   : z")
+This is a test   :
+<BLANKLINE>
+z
+>>> text_indentation("This is a test   :?. z")
+This is a test   :
+<BLANKLINE>
+?
+<BLANKLINE>
+.
+<BLANKLINE>
+z
+>>> text_indentation("This is a test   :?. again  ? ")
+This is a test   :
+<BLANKLINE>
+?
+<BLANKLINE>
+.
+<BLANKLINE>
+again  ?
+<BLANKLINE>
+>>> text_indentation("\n")
+<BLANKLINE>
+>>> text_indentation("?")
+?
+<BLANKLINE>
+>>> text_indentation(":")
+:
+<BLANKLINE>
+>>> text_indentation("\n.")
+<BLANKLINE>
+.
+<BLANKLINE>
+>>> text_indentation ("...")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+>>> text_indentation("\n.")
+<BLANKLINE>
+.
+<BLANKLINE>
+>>> text_indentation("\n a bc    ")
+<BLANKLINE>
+a bc
+>>> text_indentation(" A ")
+A
+>>> text_indentation("\n a bc   :")
+<BLANKLINE>
+a bc   :
+<BLANKLINE>

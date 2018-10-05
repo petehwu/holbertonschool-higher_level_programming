@@ -1,0 +1,33 @@
+# 0-add_integer.txt
+
+Numbers
+=======
+``add_integer`` returns the sum of its arguments.
+
+::
+
+	>>> add_integer =  __import__('0-add_integer').add_integer
+        
+        >>> add_integer(-1, 1)
+	0
+        >>> add_integer(2, 3)
+	5
+	>>> add_integer(2.0, 3.0)
+	5
+	>>> add_integer(2)
+	100
+	>>> try:
+	...     print(add_integer("a", 3))
+ 	... except Exception as e:
+	...     print(e)
+	a must be an integer
+	>>> try:
+	...     print(add_integer(3, "3"))
+	... except Exception as e:
+	...     print(e)
+	b must be an integer
+	>>> try:
+	...	print(add_integer(None))
+	... except Exception as e:
+	...     print(e)
+	a must be an integer
