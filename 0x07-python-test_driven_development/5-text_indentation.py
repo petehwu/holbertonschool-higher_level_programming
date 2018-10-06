@@ -11,17 +11,13 @@ def text_indentation(text):
         text:  the input text
     """
     strlist = []
-    ostr = ""
     ops = [".", "?", ":"]
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-
-    strlist = text.split("\n")
-    strlist = [x.lstrip(" ") for x in strlist]
-    text = "\n".join(strlist)
+    
     for o in ops:
-        strlist = text.split(o)
-        ostr = o+"\n\n"
-        strlist = [x.lstrip(" ") for x in strlist]
-        text = ostr.join(strlist)
-    print("{:s}".format(text.rstrip(" ")), end="")
+        text = text.replace(o, o+"\n")
+    strlist = text.split("\n")
+    #strlist = list(map(str.strip, strlist))
+    strlist = [x for x.strip(" ") in strlist]
+    print("{}".format("\n\n".join(strlist)), end="")

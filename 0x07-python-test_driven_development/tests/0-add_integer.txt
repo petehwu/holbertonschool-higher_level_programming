@@ -31,3 +31,13 @@ Numbers
 	... except Exception as e:
 	...     print(e)
 	a must be an integer
+	>>> try:
+	...	print(add_integer(1.7976931348623157e+309, 1))
+	... except Exception as e:
+	...     print(e)
+	cannot convert float infinity to integer
+	>>> try:
+	...	print(add_integer(float('nan'), 1))
+	... except Exception as e:
+	...     print(e)
+        cannot convert float NaN to integer
