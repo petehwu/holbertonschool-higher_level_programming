@@ -77,9 +77,12 @@ TypeError: Each row of the matrix must have the same size
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 >>> print(matrix)
 [[2, 2, 2], [4, 4, 4], [8, 8, 8]]
->>> print(matrix_divided(None, 3))
+>>> matrix = [
+...      [1]
+... ]
+>>> print(matrix_divided(matrix))
 Traceback (most recent call last):
-TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> print(matrix_divided(None, None))
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+>>> print(matrix_divided())
 Traceback (most recent call last):
-TypeError: div must be a number
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
