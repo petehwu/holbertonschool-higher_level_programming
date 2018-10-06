@@ -19,7 +19,7 @@ def matrix_divided(matrix, div):
     elif div == 0:
         raise ZeroDivisionError("division by zero")
     if not matrix or not all(isinstance(l, list) for l in matrix):
-        raise TypeError("matrix must be a matrix(\
+        raise TypeError("matrix must be a matrix (\
 list of lists) of integers/floats")
     nl = list(map(len, matrix))
     m2 = []
@@ -30,7 +30,7 @@ list of lists) of integers/floats")
     for row in matrix:
         for val in row:
             if not isinstance(val, (int, float)):
-                raise TypeError("matrix must be a matrix\
+                raise TypeError("matrix must be a matrix \
 (list of lists) of integers/floats")
             else:
                 res = val / div
