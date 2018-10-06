@@ -13,6 +13,12 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max, 5)
         max = max_integer([0, -1, -10, -50])
         self.assertEqual(max, 0)
+        max = max_integer([1])
+        self.assertEqual(max, 1)
+        max = max_integer([1, 2, 5])
+        self.assertEqual(max, 5)
+        max = max_integer([])
+        self.assertEqual(max, None)
 
     def test_Two(self):
         """second test
