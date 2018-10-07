@@ -24,4 +24,3 @@ def text_indentation(text):
         strlist = [x.lstrip(" ") for x in strlist]
         text = ostr.join(strlist)
     print("{:s}".format(text.rstrip(" ")), end="")
-
