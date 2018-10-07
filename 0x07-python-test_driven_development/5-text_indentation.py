@@ -18,6 +18,5 @@ def text_indentation(text):
     for o in ops:
         text = text.replace(o, o+"\n")
     strlist = text.split("\n")
-    #strlist = list(map(str.strip, strlist))
     strlist = [x for x.strip(" ") in strlist]
     print("{}".format("\n\n".join(strlist)), end="")
