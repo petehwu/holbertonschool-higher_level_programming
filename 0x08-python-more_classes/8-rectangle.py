@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 class Rectangle:
     """Rectangle class to represent a rectangle"""
 
@@ -29,7 +30,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value 
+        self.__width = value
 
     @height.setter
     def height(self, value):
@@ -56,18 +57,19 @@ class Rectangle:
         if self.area() == 0:
             return ""
         else:
-            rect_list = [ ("%s" % (self.print_symbol) * self.width)\
-for i in range(self.height)]
+            rect_list = [("%s" % (self.print_symbol) * self.width)
+                         for i in range(self.height)]
             return "\n".join(rect_list)
 
     def __repr__(self):
         """return a string representation of the rectangle"""
         return self.__class__.__name__ + "(" +\
-str(self.width) + ", " + str(self.height) + ")"
+            str(self.width) + ", " + str(self.height) + ")"
+
     def __del__(self):
         """destructor method"""
         type(self).number_of_instances -= 1
-        print ("Bye rectangle...")
+        print("Bye rectangle...")
 
     def bigger_or_equal(rect_1, rect_2):
         """compares area of rect_1 to rect_2 and return the bigger one"""

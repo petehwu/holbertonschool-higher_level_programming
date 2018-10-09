@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
+
 class Rectangle:
     """Rectangle class to represent a rectangle"""
-
 
     def __init__(self, width=0, height=0):
         """init method"""
@@ -26,7 +26,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value 
+        self.__width = value
 
     @height.setter
     def height(self, value):
@@ -53,10 +53,11 @@ class Rectangle:
         if self.area() == 0:
             return ""
         else:
-            rect_list = [("%s" % ("#") * self.width) for i in range(self.height)]
+            rect_list = [("%s" % ("#") * self.width)
+                         for i in range(self.height)]
             return "\n".join(rect_list)
 
     def __repr__(self):
         """return a string representation of the rectangle"""
-        return self.__class__.__name__ + "(" +\
-str(self.width) + ", " + str(self.height) + ")"
+        return self.__class__.__name__ + "(" + \
+            str(self.width) + ", " + str(self.height) + ")"
