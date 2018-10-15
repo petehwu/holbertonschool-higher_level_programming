@@ -1,0 +1,15 @@
+# 1-my_list.py
+
+``MyList`` is a class that inherits from the list class.
+The method print_sorted prints the list of integers in sorted order
+
+::
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.append(0)
+>>> my_list.append(-5)
+>>> my_list.append(-3)
+>>> my_list.print_sorted()
+[-5, -3, 0, 5]
