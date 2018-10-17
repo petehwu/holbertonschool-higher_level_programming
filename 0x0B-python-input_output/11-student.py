@@ -11,7 +11,7 @@ class Student():
             raise TypeError("first_name must be a string")
         if not isinstance(last_name, str) or last_name == "":
             raise TypeError("last_name must be a string")
-        if not isinstance(age, int):
+        if not isinstance(age, (int, float)):
             raise TypeError("age must be an integer")
         if age < 0:
             raise ValueError("age cannot be negative")
