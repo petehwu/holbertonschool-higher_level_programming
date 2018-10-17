@@ -13,8 +13,8 @@ class Student():
             raise TypeError("last_name must be a string")
         if not isinstance(age, (int, float)):
             raise TypeError("age must be numeric")
-        if age < 0:
-            raise ValueError("age must not be negative")
+        if age <= 0:
+            raise ValueError("age must be greater than 0")
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
