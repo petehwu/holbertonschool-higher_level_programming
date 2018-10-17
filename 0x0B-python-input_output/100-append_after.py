@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 
-def append_after(filename="", search_string="", new_string= ""):
+def append_after(filename="", search_string="", new_string=""):
     fileList = []
 
     if not isinstance(filename, str):
         raise TypeError("filename must be a string")
-    with open(filename, mode ="r", encoding="utf-8") as readFile:
+    with open(filename, mode="r", encoding="utf-8") as readFile:
         for line in readFile:
             fileList.append(line)
             if search_string in line:
