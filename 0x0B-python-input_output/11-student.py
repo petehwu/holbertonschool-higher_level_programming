@@ -7,9 +7,9 @@ class Student():
     def __init__(self, first_name, last_name, age):
         """init method for Student class"""
 
-        if not isinstance(first_name, str):
+        if not isinstance(first_name, str) or first_name == "":
             raise TypeError("first_name must be a string")
-        if not isinstance(last_name, str):
+        if not isinstance(last_name, str) or last_name == "":
             raise TypeError("last_name must be a string")
         if not isinstance(age, int):
             raise TypeError("age must be an integer")
