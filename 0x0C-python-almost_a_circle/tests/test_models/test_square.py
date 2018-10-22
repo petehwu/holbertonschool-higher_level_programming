@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""square unittest module"""
 import io
 import unittest
 import os
@@ -8,8 +9,10 @@ from models.square import Square
 
 
 class testSquareTwo(unittest.TestCase):
+    """test basic initialization of square"""
 
     def testSquaret2(self):
+        """testing basic initialization of Square objects"""
         r1 = Square(1, 0, 0, "r1")
         self.assertEqual(r1.id, "r1")
         self.assertEqual(r1.x, 0)
@@ -33,8 +36,10 @@ class testSquareTwo(unittest.TestCase):
 
 
 class testArea(unittest.TestCase):
+    """testing area method of square classs"""
 
     def testAreaCalc(self):
+        """perform test to calculate area"""
         r1 = Square(3)
         self.assertEqual(r1.area(), 9)
         r2 = Square(8,  0, 0, 122)
@@ -42,13 +47,16 @@ class testArea(unittest.TestCase):
 
 
 class testDisplay(unittest.TestCase):
+    """testing display of drawing square"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, rect, expected_output, mock_stdout):
+        """initial setup for screen capture"""
         rect.display()
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testPrintAreq(self):
+        """test output and compare"""
         r1 = Square(3)
         self.assert_stdout(r1, "###\n###\n###\n")
         r2 = Square(2, 1, 1)
@@ -56,18 +64,21 @@ class testDisplay(unittest.TestCase):
         r2 = Square(2, 2, 1)
         self.assert_stdout(r2, "\n  ##\n  ##\n")
         r2 = Square(5, 2, 3)
-        self.assert_stdout(r2, "\n\n\n  #####\n  #####\n" + 
-               "  #####\n  #####\n  #####\n")
+        self.assert_stdout(r2, "\n\n\n  #####\n  #####\n" +
+                           "  #####\n  #####\n  #####\n")
 
 
 class testStr(unittest.TestCase):
-    
+    """testing the string overload for square"""
+
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
+        """set up to capture the printed output"""
         print(rect)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testStrOverload(self):
+        """test output and compare results"""
         r1 = Square(4, 2, 1, 12)
         self.assert_print(r1, "[Square] (12) 2/1 - 4\n")
         r2 = Square(1, 0, 0, "r3")
@@ -80,13 +91,16 @@ class testStr(unittest.TestCase):
 
 
 class testUpdate(unittest.TestCase):
+    """testing the update method of square objects"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
+        """initial setup to get screen capture"""
         print(rect)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testUpdateVals(self):
+        """test output and compare result"""
         r1 = Square(1, 1, 1)
         r1.update("r99")
         self.assert_print(r1, "[Square] (r99) 1/1 - 1\n")

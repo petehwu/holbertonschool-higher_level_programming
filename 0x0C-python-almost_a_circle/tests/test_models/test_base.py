@@ -8,8 +8,10 @@ from models.square import Square
 
 
 class TestBase(unittest.TestCase):
-    
+    """first test case for base class"""
+
     def test_this(self):
+        """testing initialization"""
         b1 = Base()
         self.assertEqual(b1.id, Base._Base__nb_objects)
         b2 = Base("hi")
@@ -35,8 +37,10 @@ class TestBase(unittest.TestCase):
 
 
 class TestDictToJson(unittest.TestCase):
-    
+    """test dictionary to json"""
+
     def testDict(self):
+        """test serialize to json"""
         l1 = [{"k1": "v1", "k2": "v2", "k3": "v3"},
               {"kk1": "vv1", "kk2": "vv2", "kk3": "vv3"}]
         json_dictionary = Base.to_json_string(l1)
@@ -52,8 +56,10 @@ class TestDictToJson(unittest.TestCase):
 
 
 class TestSaveToFile(unittest.TestCase):
-    
+    """test save to file"""
+
     def testSave(self):
+        """test save to file method"""
         try:
             os.remove("Rectangle.json")
         except FileNotFoundError:
@@ -81,8 +87,10 @@ class TestSaveToFile(unittest.TestCase):
 
 
 class testFromJsonString(unittest.TestCase):
-    
+    """test deserilzie from json to string"""
+
     def testJsonToString(self):
+        """test change from json to string"""
         self.assertEqual(Rectangle.from_json_string(""), [])
         self.assertEqual(Rectangle.from_json_string(None), [])
         s1 = '[{"k1": "v1","k2": "v2"},{"k3": "v3", "k4": "v4"}]'
@@ -93,8 +101,10 @@ class testFromJsonString(unittest.TestCase):
 
 
 class testCreate(unittest.TestCase):
-    
+    """test create object from json"""
+
     def testCreatedict(self):
+        """test create a dictionary"""
         r1 = Rectangle(3, 5, 1, 1, "r1")
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
@@ -112,8 +122,10 @@ class testCreate(unittest.TestCase):
 
 
 class testLoadFile(unittest.TestCase):
-    
+    """testing save to file"""
+
     def testLoadFromFile(self):
+        """test loading object from file"""
         try:
             os.remove("Rectangle.json")
         except FileNotFoundError:
@@ -152,6 +164,3 @@ class testLoadFile(unittest.TestCase):
             self.assertEqual(obj2.size, 8)
             self.assertNotEqual(id(obj), id(obj2))
             self.assertNotEqual(id(obj2), id(s1))
-
-if __name__ == '__main__':
-    unittest.main()

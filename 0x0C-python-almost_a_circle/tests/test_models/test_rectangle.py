@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""rectangle unittest module"""
 import io
 import unittest
 import os
@@ -8,8 +9,10 @@ from models.rectangle import Rectangle
 
 
 class testRectangleTwo(unittest.TestCase):
+    """testing rectangle class"""
 
     def testRectanglet2(self):
+        """basic tests for rectangle class"""
         r1 = Rectangle(1, 2, 0, 0, "r1")
         self.assertEqual(r1.id, "r1")
         self.assertEqual(r1.x, 0)
@@ -37,8 +40,11 @@ class testRectangleTwo(unittest.TestCase):
 
 
 class testArea(unittest.TestCase):
+    """testing the area method"""
 
     def testAreaCalc(self):
+        """testing basic operations for area method"""
+
         r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)
         r2 = Rectangle(8, 5, 0, 0, 122)
@@ -46,13 +52,16 @@ class testArea(unittest.TestCase):
 
 
 class testDisplay(unittest.TestCase):
+    """testing displaying of data"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, rect, expected_output, mock_stdout):
+        """test set up to capture screen"""
         rect.display()
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testPrintAreq(self):
+        """test compare screen output to expected output"""
         r1 = Rectangle(3, 2)
         self.assert_stdout(r1, "###\n###\n")
         r2 = Rectangle(2, 3, 1, 1)
@@ -64,13 +73,16 @@ class testDisplay(unittest.TestCase):
 
 
 class testStr(unittest.TestCase):
-    
+    """testing the str overload method"""
+
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
+        """set up the test to capture screen printout"""
         print(rect)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testStrOverload(self):
+        """perform test and compare output"""
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assert_print(r1, "[Rectangle] (12) 2/1 - 4/6\n")
         r2 = Rectangle(1, 2, 0, 0, "r3")
@@ -83,13 +95,16 @@ class testStr(unittest.TestCase):
 
 
 class testUpdate(unittest.TestCase):
+    """testing update method of rectangle"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
+        """initial setup of screen capture"""
         print(rect)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testUpdateVals(self):
+        """perform test and compare"""
         r1 = Rectangle(1, 1, 1, 1)
         r1.update("r99")
         self.assert_print(r1, "[Rectangle] (r99) 1/1 - 1/1\n")
