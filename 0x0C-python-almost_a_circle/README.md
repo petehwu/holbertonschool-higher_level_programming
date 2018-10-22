@@ -19,7 +19,7 @@ serialization/deserialization
 
 #### Files
 File | Description
-
+---|---
 \*-main.py | test files
 models/base.py | class definition for the base class
 models/rectangle.py | class definitiont for the rectangle class
