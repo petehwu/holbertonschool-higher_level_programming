@@ -32,6 +32,7 @@ class Square(Rectangle):
                 setattr(self, key, val)
 
     def to_dictionary(self):
+        """takes object and create dict representation"""
         temp_dict = {}
         temp_dict['id'] = self.id
         temp_dict['size'] = self.size
