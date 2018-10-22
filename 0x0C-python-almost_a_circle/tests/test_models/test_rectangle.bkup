@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""unittest file for rectangle class"""
 import io
 import unittest
 import os
@@ -8,8 +9,10 @@ from models.rectangle import Rectangle
 
 
 class testRectangleTwo(unittest.TestCase):
+    """testing Rectangle Class. Task two"""
 
     def testRectanglet2(self):
+        """testing Rectangle class task 2 and 3"""
         r1 = Rectangle(1, 2, 0, 0, "r1")
         self.assertEqual(r1.id, "r1")
         self.assertEqual(r1.x, 0)
@@ -37,8 +40,10 @@ class testRectangleTwo(unittest.TestCase):
 
 
 class testArea(unittest.TestCase):
+    """testing the area calculation for rectangle"""
 
     def testAreaCalc(self):
+        """testing the area calculationf or rectangle task4"""
         r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)
         r2 = Rectangle(8, 5, 0, 0, 122)
@@ -46,13 +51,16 @@ class testArea(unittest.TestCase):
 
 
 class testDisplay(unittest.TestCase):
+    """testing displayed data"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, rect, expected_output, mock_stdout):
+        """set up test to compare output on screen to expected text"""
         rect.display()
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testPrintAreq(self):
+        """testing printing of area"""
         r1 = Rectangle(3, 2)
         self.assert_stdout(r1, "###\n###\n")
         r2 = Rectangle(2, 3, 1, 1)
@@ -64,13 +72,16 @@ class testDisplay(unittest.TestCase):
 
 
 class testStr(unittest.TestCase):
+    """test str output"""
     
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
+        """set up for checking output"""
         print(rect)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testStrOverload(self):
+        """testing ouptut to see if matches"""
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assert_print(r1, "[Rectangle] (12) 2/1 - 4/6\n")
         r2 = Rectangle(1, 2, 0, 0, "r3")
@@ -83,13 +94,16 @@ class testStr(unittest.TestCase):
 
 
 class testUpdate(unittest.TestCase):
+    """testing update of attributes"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
+        """set up test to enable checking output"""
         print(rect)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def testUpdateVals(self):
+        """perform actual test"""
         r1 = Rectangle(1, 1, 1, 1)
         r1.update("r99")
         self.assert_print(r1, "[Rectangle] (r99) 1/1 - 1/1\n")
