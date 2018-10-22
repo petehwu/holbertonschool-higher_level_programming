@@ -37,6 +37,7 @@ class testSquareTwo(unittest.TestCase):
 
 class testArea(unittest.TestCase):
     """testing the area calculation for square"""
+
     def testAreaCalc(self):
         """testing the area calculationf or square """
         r1 = Square(3)
@@ -46,6 +47,7 @@ class testArea(unittest.TestCase):
 
 
 class testDisplay(unittest.TestCase):
+    """testing displayed data to check if correct"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, rect, expected_output, mock_stdout):
@@ -67,8 +69,8 @@ class testDisplay(unittest.TestCase):
 
 
 class testStr(unittest.TestCase):
-
     """test str output"""
+    
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
         """set up for checking output"""

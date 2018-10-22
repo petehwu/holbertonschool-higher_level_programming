@@ -41,6 +41,7 @@ class testRectangleTwo(unittest.TestCase):
 
 class testArea(unittest.TestCase):
     """testing the area calculation for rectangle"""
+
     def testAreaCalc(self):
         """testing the area calculationf or rectangle task4"""
         r1 = Rectangle(3, 2)
@@ -50,6 +51,7 @@ class testArea(unittest.TestCase):
 
 
 class testDisplay(unittest.TestCase):
+    """testing displayed data"""
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, rect, expected_output, mock_stdout):
@@ -70,8 +72,8 @@ class testDisplay(unittest.TestCase):
 
 
 class testStr(unittest.TestCase):
-
     """test str output"""
+    
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_print(self, rect, expected_output, mock_stdout):
         """set up for checking output"""

@@ -8,8 +8,8 @@ from models.square import Square
 
 
 class TestBase(unittest.TestCase):
-
     """test initializing base class to make sure id is set correctly"""
+    
     def test_this(self):
         """test for task 1 creating the Base class"""
         b1 = Base()
@@ -37,8 +37,8 @@ class TestBase(unittest.TestCase):
 
 
 class TestDictToJson(unittest.TestCase):
-
     """testing 15 take list of dict and convert to Json string"""
+    
     def testDict(self):
         """testing task 15 to_json_string"""
         l1 = [{"k1": "v1", "k2": "v2", "k3": "v3"},
@@ -56,8 +56,8 @@ class TestDictToJson(unittest.TestCase):
 
 
 class TestSaveToFile(unittest.TestCase):
-
     """testing saving to file"""
+    
     def testSave(self):
         """testing task 16 save_to_file"""
         try:
@@ -87,8 +87,8 @@ class TestSaveToFile(unittest.TestCase):
 
 
 class testFromJsonString(unittest.TestCase):
-
     """ testing 17 from_json_string"""
+    
     def testJsonToString(self):
         """testing task 17 from_json_string"""
         self.assertEqual(Rectangle.from_json_string(""), [])
@@ -101,8 +101,8 @@ class testFromJsonString(unittest.TestCase):
 
 
 class testCreate(unittest.TestCase):
-
     """testing 18 create"""
+    
     def testCreatedict(self):
         """testing task 18 create method in Base class"""
         r1 = Rectangle(3, 5, 1, 1, "r1")
@@ -122,8 +122,8 @@ class testCreate(unittest.TestCase):
 
 
 class testLoadFile(unittest.TestCase):
-
     """testing 19 loading from file"""
+    
     def testLoadFromFile(self):
         """Testing 19 load_from_file method"""
         try:
