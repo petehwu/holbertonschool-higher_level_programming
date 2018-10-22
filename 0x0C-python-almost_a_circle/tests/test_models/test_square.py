@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""unittest file for square class"""
 import io
 import unittest
 import os
