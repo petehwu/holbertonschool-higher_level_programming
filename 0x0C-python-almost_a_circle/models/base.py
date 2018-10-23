@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""base class definition"""
+"""base class module"""
 import json
 
 
