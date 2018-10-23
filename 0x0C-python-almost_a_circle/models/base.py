@@ -33,7 +33,10 @@ class Base:
         """returns an instance with all the attributes set"""
         if (dictionary is None or not dictionary):
             raise TypeError("dictionary cannot be blank")
-        dummy = cls(1, 1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
