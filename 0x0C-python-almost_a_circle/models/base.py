@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" base class definition"""
+"""base class definition"""
 import json
 
 
@@ -19,6 +19,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """save string representation of json to file"""
+
         filename = cls.__name__ + ".json"
         if list_objs is None or list_objs == "":
             list_dict = None
@@ -32,16 +33,12 @@ class Base:
         """returns an instance with all the attributes set"""
         if (dictionary is None or not dictionary):
             raise TypeError("dictionary cannot be blank")
-        if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-        else:
-            dummy = cls(1)
+        dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
-        """loads object from file"""
         il = []
         filename = cls.__name__+".json"
         try:
@@ -55,8 +52,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns JSON string representation of list of dictionaries"""
-        if list_dictionaries is None or list_dictionaries = []:
+        """convert list of dictionaries to string"""
+        if list_dictionaries is None:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -64,7 +61,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """convert string of JSON to list of string of JSON"""
-        if not json_string:
+        if json_string is None or json_string == "":
             return []
         else:
             return json.loads(json_string)
