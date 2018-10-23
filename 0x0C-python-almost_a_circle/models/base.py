@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""base class module"""
+"""base class module definition file"""
 import json
 
 
 class Base:
-    """base class definition"""
-
+    """Base class definition"""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -19,7 +18,6 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """save string representation of json to file"""
-
         filename = cls.__name__ + ".json"
         if list_objs is None or list_objs == "":
             list_dict = None
