@@ -47,7 +47,6 @@ class TestDictToJson(unittest.TestCase):
         self.assertIs(type(json_dictionary), str)
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
-        self.assertEqual(Base.to_json_string(""), "[]")
         self.assertIs(type(Base.to_json_string([])), str)
         self.assertEqual(Base.to_json_string(["blah", "foo"]),
                          '["blah", "foo"]')
