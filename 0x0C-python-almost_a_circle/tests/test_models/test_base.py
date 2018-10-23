@@ -85,6 +85,10 @@ class TestSaveToFile(unittest.TestCase):
         self.assertNotEqual(os.path.getsize("Square.json"), 2)
         Square.save_to_file(None)
         self.assertEqual(os.path.getsize("Square.json"), 2)
+        s4 = Square(1)
+        Square.save_to_file([s4])
+        self.assertTrue(os.access("Square.json", os.F_OK))
+        self.assertNotEqual(os.path.getsize("Square.json"), 2)
 
 
 class testFromJsonString(unittest.TestCase):
@@ -137,6 +141,18 @@ class testCreate(unittest.TestCase):
         self.assertEqual(s2.x, s1.x)
         self.assertEqual(s2.y, s1.y)
         self.assertEqual(s1.size, s2.size)
+        r1 = Rectangle.create(**{'id': 89, 'width': 1})
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 1)
+        self.assertEqual(r1.id, 89)
+        r2 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(r2.width, 1)
+        self.assertEqual(r2.height, 2)
+        self.assertEqual(r2.id, 89)
+        s3 = Square(1, 2)
+        self.assertEqual(s3.size, 1)
+        self.assertEqual(s3.x, 2)
+        self.assertEquat(s3.y, 0)
 
 
 class testLoadFile(unittest.TestCase):

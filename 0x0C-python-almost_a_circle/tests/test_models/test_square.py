@@ -34,6 +34,11 @@ class testSquareTwo(unittest.TestCase):
         self.assertRaises(TypeError, Square, 2, 0, "b", "r2")
         self.assertRaises(ValueError, Square, 2, 0, -2, "r2")
 
+        r2 = Square(1, 2, 3)
+        self.assertEqual(r2.size, 1)
+        self.assertEqual(r2.x, 2)
+        self.assertEqual(r2.y, 3)
+
 
 class testArea(unittest.TestCase):
     """testing area method of square classs"""
