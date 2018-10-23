@@ -45,8 +45,10 @@ class TestDictToJson(unittest.TestCase):
               {"kk1": "vv1", "kk2": "vv2", "kk3": "vv3"}]
         json_dictionary = Base.to_json_string(l1)
         self.assertIs(type(json_dictionary), str)
-        self.assertEqual(Base.to_json_string(None), '[]')
-        self.assertEqual(Base.to_json_string([]), '[]')
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        self.assertEqual(Base.to_json_string(""), "[]")
+        self.assertIs(type(Base.to_json_string([])), str)
         self.assertEqual(Base.to_json_string(["blah", "foo"]),
                          '["blah", "foo"]')
         l1 = [{"k1": {"kk1": "vv1", "kk1": "vv2"},
@@ -119,6 +121,23 @@ class testCreate(unittest.TestCase):
         self.assertFalse(s1 is s2)
         self.assertFalse(s1 == s2)
         self.assertEqual(s2.id, "s1")
+        r1 = Rectangle(3, 5)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertFalse(r1 is r2)
+        self.assertFalse(r1 == r2)
+        self.assertEqual(r2.id, r1.id)
+        self.assertEqual(r2.x, 0)
+        self.assertEqual(r2.y, 0)
+        s1 = Square(3)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertFalse(s1 is s2)
+        self.assertFalse(s1 == s2)
+        self.assertEqual(s2.id, s1.id)
+        self.assertEqual(s2.x, s1.x)
+        self.assertEqual(s2.y, s1.y)
+        self.assertEqual(s1.size, s2.size)
 
 
 class testLoadFile(unittest.TestCase):
