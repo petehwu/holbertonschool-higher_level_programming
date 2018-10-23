@@ -33,7 +33,6 @@ class testSquareTwo(unittest.TestCase):
         self.assertRaises(TypeError, Square, 2, 0, None, "r2")
         self.assertRaises(TypeError, Square, 2, 0, "b", "r2")
         self.assertRaises(ValueError, Square, 2, 0, -2, "r2")
-
         r2 = Square(1, 2, 3)
         self.assertEqual(r2.size, 1)
         self.assertEqual(r2.x, 2)
