@@ -17,4 +17,4 @@ if __name__ == "__main__":
                    ON a.state_id = b.id ORDER BY 1;""")
     rows = cur.fetchall()
     for row in rows:
-        print("({:d}, '{:s}', {:s})".format(row[0], row[1], row[2]))
+        print("({:d}, '{:s}', '{:s}')".format(row[0], row[1], row[2]))
