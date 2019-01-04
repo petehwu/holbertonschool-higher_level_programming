@@ -7,13 +7,13 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2], 
-                           sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.bind=engine
+                           .format(sys.argv[1], sys.argv[2],
+                                   sys.argv[3]), pool_pre_ping=True)
+    Base.metadata.bind = engine
 
-    DBSession=sessionmaker(bind=engine)
-    session=DBSession()
-    first=session.query(State).first()
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()
+    first = session.query(State).first()
     if (first is None):
         print("Nothing")
     else:
