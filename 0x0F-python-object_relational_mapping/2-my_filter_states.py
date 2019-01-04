@@ -12,7 +12,7 @@ if __name__ == "__main__":
     MY_PORT = 3306
     sqlq = """SELECT id, name
               FROM states
-              WHERE name='%s'
+              WHERE BINARY name='%s'
               ORDER BY 1;""" % THE_STATE
 
     db = MySQLdb.connect(host=MY_HOST, port=MY_PORT,
