@@ -15,7 +15,7 @@ if __name__ == "__main__":
                          user=MY_USER, passwd=MY_PASS, db=MY_DB)
     cur = db.cursor()
     cur.execute("""SELECT id, name FROM states
-                   WHERE name= %s ORDER BY 1;""", (THE_STATE,))
+                   WHERE BINARY name= %s ORDER BY 1;""", (THE_STATE,))
     rows = cur.fetchall()
     for row in rows:
         print("({:d}, '{:s}')".format(row[0], row[1]))
