@@ -14,6 +14,6 @@ if __name__ == "__main__":
 
     DBSession = sessionmaker(bind=engine)
     session = DBSession()
-    session.query(State).filter(State.name.like(func.binary('%a%')))
-    .delete(synchronize_session=False)
+    session.query(State).filter(State.name.like(func.binary('%a%')))\
+           .delete(synchronize_session=False)
     session.commit()
