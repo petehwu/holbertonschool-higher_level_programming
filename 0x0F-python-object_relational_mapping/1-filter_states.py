@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" 0-select_states """
+"""  1-filter states
+"""
 import MySQLdb
 from sys import argv
 
@@ -11,7 +12,7 @@ if __name__ == "__main__":
     MY_PORT = 3306
     sqlq = """SELECT id, name
               FROM states
-              WHERE LEFT(name,1)='N' 
+              WHERE LEFT(name,1)='N'
               ORDER BY 1;"""
 
     db = MySQLdb.connect(host=MY_HOST, port=MY_PORT,
