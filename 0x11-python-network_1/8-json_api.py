@@ -10,11 +10,10 @@ if __name__ == "__main__":
         srch = sys.argv[1]
     try:
         html = requests.post('http://34.206.234.184:41878/search_user',
-                         data = {'q': srch})
+                             data={'q': srch})
         if not(html.json()):
-            print ("No result")
+            print("No result")
         else:
             print("[{}] {}".format(html.json()['id'], html.json()['name']))
     except ValueError:
         print("Not a valid JSON")
-    
