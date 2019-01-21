@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This script sends a POST command and sends an e-mail address"""
 import urllib.parse
-import urllin.request
+import urllib.request
 import sys
 
 if __name__ == "__main__":
