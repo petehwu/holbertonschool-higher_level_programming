@@ -9,7 +9,7 @@ if __name__ == "__main__":
     else:
         srch = sys.argv[1]
     try:
-        html = requests.post('http://34.206.234.184:41878/search_user',
+        html = requests.post('http://0.0.0.0:5000/search_user',
                              data={'q': srch})
         if not(html.json()):
             print("No result")
