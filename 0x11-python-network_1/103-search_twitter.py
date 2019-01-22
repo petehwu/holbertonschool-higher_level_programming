@@ -22,8 +22,7 @@ if __name__ == "__main__":
             'grant_type': 'client_credentials'
             }
     auth_resp = requests.post(auth_url, headers=auth_headers, data=auth_data)
-    print(auth_resp.status_code)
-    access_token = auth_resp.json()['access_token']
+    access_token = auth_resp.json().get('access_token')
     search_headers = {
             'Authorization': 'Bearer {}'.format(access_token)
             }
