@@ -19,7 +19,7 @@ if __name__ == "__main__":
             print(i.get('name'))
             for x in i.get('films'):
                 req = requests.get(x)
-                print("\t {}".format(req.json().get("title")))
+                print("\t{}".format(req.json().get("title")))
         if (res_dict.get('next')):
             res = requests.get(res_dict.get("next"))
             res_dict = res.json()
