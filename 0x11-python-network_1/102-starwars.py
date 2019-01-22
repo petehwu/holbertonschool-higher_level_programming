@@ -13,16 +13,15 @@ if __name__ == "__main__":
     res = requests.get(url, params={"search": val})
     res_dict = res.json()
     tot = res_dict.get("count")
-    added = 0
-    page = 1
     print("Number of results: {}".format(tot))
-    while added < tot:
+    while res_dict:
         for i in res_dict.get('results'):
-            added += 1
             print(i.get('name'))
             for x in i.get('films'):
                 req = requests.get(x)
                 print("\t {}".format(req.json().get("title")))
-        page += 1
-        res = requests.get(url, params={"search": val, "page": page})
-        res_dict = res.json()
+        if (res_dict.get('next')):
+            res = requests.get(res_dict.get("next"))
+            res_dict = res.json()
+        else:
+            res_dict = None
