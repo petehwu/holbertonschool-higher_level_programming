@@ -9,4 +9,4 @@ if __name__ == "__main__":
     res = requests.get(url)
     res_dict = res.json()
     for d in res_dict[:10]:
-        print("{}: {} {}".format(d.get("sha"), d["commit"]["author"]["name"]))
+        print("{}: {}".format(d.get("sha"), d["commit"]["author"]["name"]))
