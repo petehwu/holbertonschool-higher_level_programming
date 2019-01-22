@@ -17,10 +17,10 @@ if __name__ == "__main__":
     page = 1
     print("Number of results: {}".format(tot))
     while added < tot:
-        for i in res_dict['results']:
+        for i in res_dict.get('results'):
             added += 1
-            print(i['name'])
-            for x in i['films']:
+            print(i.get('name'))
+            for x in i.get('films'):
                 req = requests.get(x)
                 print("\t {}".format(req.json().get("title")))
         page += 1
