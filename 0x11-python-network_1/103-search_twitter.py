@@ -4,7 +4,7 @@ import requests
 import base64
 import sys
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # k1 = '1x1QdHz9GmTWNVrJ7F8H6F49X'
     # k2 = 'QrbOB84Qorunk0AlQSj7a2vpFZaIiWYEc0stXhYBdTI7bDvQxZ'
     # token = '{}:{}'.format(k1, k2).encode('ascii')

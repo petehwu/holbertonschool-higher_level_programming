@@ -11,8 +11,8 @@ if __name__ == "__main__":
     else:
         val = sys.argv[1]
     res = requests.get(url, params={"search": val})
-    tot = res.json().get('count')
     res_dict = res.json()
+    tot = res_dict.get("count")
     added = 0
     page = 1
     print("Number of results: {}".format(tot))
