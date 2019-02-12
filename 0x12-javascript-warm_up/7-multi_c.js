@@ -8,4 +8,3 @@ if (iter === undefined || isNaN(iter)) {
     console.log('C is fun');
   }
 }
-
