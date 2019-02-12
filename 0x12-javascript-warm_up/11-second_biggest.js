@@ -8,6 +8,7 @@ process.argv.forEach((val, index) => {
 if (numList.length < 2) {
   console.log(0);
 } else {
-  numList.sort();
+  numList.sort((a, b) => a - b);
+  console.log(numList);
   console.log(numList[numList.length - 2]);
 }
