@@ -1,11 +1,7 @@
 #!/usr/bin/node
-let vals = 0;
-process.argv.forEach((val, index) => {
-  if (index === 2) {
-    vals += 1;
-    console.log(val);
-  }
-});
-if (vals === 0) {
+let ar = process.argv[2];
+if (ar === undefined) {
   console.log('No argument');
+} else {
+  console.log(ar);
 }
