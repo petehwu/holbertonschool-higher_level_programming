@@ -1,5 +1,3 @@
 #!/usr/bin/node
-// This script defines a rectangle class
-
-class Rectangle {
-}
+// declare empty Rectangle class
+module.exports = class Rectangle {};
