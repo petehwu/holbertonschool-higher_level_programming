@@ -4,7 +4,7 @@
 const request = require('request');
 const uri = process.argv[2];
 let count = 0;
-let search = new RegExp('//swapi.co/api/people/18/');
+let search = new RegExp('://swapi.co/api/people/18/');
 if (uri === undefined) {
   console.log('Error: Usage ./4-starwars_count.js <starwars_api_url>');
 } else {
