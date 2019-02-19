@@ -8,8 +8,8 @@ if (uri === undefined) {
   console.log('Error: Usage ./4-starwars_count.js <film_id_number>');
 } else {
   request.get({ url: uri, json: true }, function (error, response, body) {
-    if (response.statusCode != 200) {
-      console.log(response.statusCode);
+    if (error) {
+      console.log(error);
     } else {
       let res = body.results;
       let index = 0;
