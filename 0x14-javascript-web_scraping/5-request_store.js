@@ -9,7 +9,7 @@ const file = process.argv[3];
 if (uri === undefined || file === undefined) {
   console.log('Error: Usage ./5-request_store.js <url> <filename>');
 } else {
-  request.get({ url: uri, json: true }, function (error, response, body) {
+  request.get({ url: uri, json: false }, function (error, response, body) {
     if (error) {
       console.log(error);
     } else {
