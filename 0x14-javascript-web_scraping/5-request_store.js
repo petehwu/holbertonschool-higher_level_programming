@@ -14,7 +14,7 @@ if (uri === undefined || file === undefined) {
       console.log(error);
     } else {
       try {
-        fs.writeFileSync(file, body, 'utf8');
+        fs.writeFileSync(file, body, 'utf-8');
       } catch (err) {
         console.log(err);
       }
