@@ -20,7 +20,7 @@ if (uri === undefined) {
           count++;
         }
       }
-      console.log(count);
+      console.log(count.toString());
     }
   });
 }
