@@ -6,7 +6,11 @@ let uri = process.argv[2];
 if (uri === undefined) {
   console.log('Error: Uszge ./2-statuscode.js <URL>');
 } else {
-  request.get(uri, function (response) {
-    console.log('code: ' + response.statusCode);
+  request.get({ url: uri }, function (error, response, body) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('code: ' + response.statusCode);
+    }
   });
 }
