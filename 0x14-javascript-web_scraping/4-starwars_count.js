@@ -10,6 +10,8 @@ if (uri === undefined) {
   request.get({ url: uri, json: true }, function (error, response, body) {
     if (error) {
       console.log(error);
+    } else if (response.statusCode !== 200) {
+      console.log(response.statusCode);
     } else {
       let res = body.results;
       let index = 0;
